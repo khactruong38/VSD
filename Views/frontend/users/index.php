@@ -12,8 +12,8 @@
 $columns = array(
     'id' => 'ID',
     'name' => 'Name',
-    'price' => 'Price',
-    'category_id' => 'Category ID'
+    'tel' => 'Tel',
+    'address' => 'Address'
 );
 
 // Hiển thị bảng sản phẩm
@@ -23,7 +23,7 @@ foreach ($columns as $key => $label) {
     echo '<th>' . $label . '</th>';
 }
 echo '</tr>';
-foreach ($products as $item) {
+foreach ($users as $item) {
     echo '<tr>';
     foreach ($columns as $key => $label) {
         echo '<td>' . $item[$key] . '</td>';
