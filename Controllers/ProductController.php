@@ -19,45 +19,77 @@ class ProductController extends BaseController
             'column'=>'id',
             'order'=>'desc'];
         $products = $this->productModel->getAll($select,$orders);
+        // Các cột bạn muốn hiển thị ở trang index
+
+        $columns = [
+            'id' => ['label' => 'ID', 'width' => '100px'],
+            'name' => ['label' => 'Name', 'width' => '200px'],
+            'price' => ['label' => 'Price', 'width' => '150px'],
+            'category_id' => ['label' => 'Category ID', 'width' => '100px']
+        ];
+        
         
         return $this->view('frontend.products.index',[
             'pageTitle' => "trang sản phẩm",
+            'columns' => $columns,
             'products'=>$products,
 
         ]);
+        
     }
     public function store()
     {
-        $data = [
-            'name'=>'iphone13',
-            'price'=>'30000000',
-            'image'=> null,
-            'category_id' =>2
-        ];
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Lấy dữ liệu từ form và lưu vào mảng $data
+            $data = [
+                'name' => $_POST['name'],
+                'price' => $_POST['price'],
+                'category_id' => $_POST['category_id']
+            ];
+        
+            // Xử lý dữ liệu ở đây, ví dụ: lưu vào cơ sở dữ liệu, xử lý logic, v.v.
+            // Ví dụ: in ra mảng dữ liệu
+        }
         $this->productModel->store($data);
+        $this->index();
     }
     public function update()
     {
-        $id = $_GET['id'];
+        $id = $_POST['id'];
         $data = [
-            'name'=>'iphone15',
-            'price'=>'52000000',
+            'name'=> $_POST['name'],
+            'price'=> $_POST['price'],
             'image'=> null,
-            'category_id' =>2
+            'category_id' =>$_POST['category_id']
         ];
         $this->productModel->updateData($id,$data);
+        $this->index();
     }
     public function delete()
     {
         $id = $_GET['id'];
         $this->productModel->deleteData($id);
+        $this->index();
 
     }
     public function show()
     {
-        $product = $this->productModel->findById(12);
-        return $this->view('frontend.products.show',[
-            'product'=>$product,
+        return $this->view('frontend.products.show');
+    }
+    public function findById()
+    {
+        $products = $this->productModel->find($_GET['controller']."s",$_GET['id']);
+        // Các cột bạn muốn hiển thị ở trang edit
+        $columns = [
+            'name',
+            'price',
+            'category_id'];
+        return $this->view('frontend.products.edit',[
+            'pageTitle' => "trang sản phẩm",
+            'columns' => $columns,
+            'products'=>$products,
+
         ]);
+        
     }
 }

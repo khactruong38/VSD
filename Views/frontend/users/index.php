@@ -1,3 +1,4 @@
+<div style ="padding-left:240px">
 <?php
     echo $pageTitle;
     // echo '<pre>';
@@ -32,3 +33,4 @@ foreach ($users as $item) {
 }
 echo '</table>';
 ?>
+</div>

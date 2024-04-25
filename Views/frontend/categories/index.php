@@ -1,3 +1,4 @@
+<div style ="padding-left:240px">
 <?php
     echo $pageTitle;
     // print_r($categories);
@@ -25,3 +26,13 @@ foreach ($categories as $item) {
 }
 echo '</table>';
 ?>
+<button>
+    <a href="index.php?controller=<?php echo $_REQUEST['controller']; ?>&action=show">
+        <div class="menu-item">
+            <div class="menu-icon">📊</div>
+            <div class="menu-text text-dark">Thêm</div>
+        </div>
+    </a>
+</button>
+</div>
+</div>

@@ -22,7 +22,10 @@ class CategoryController extends BaseController
     }
     public function store()
     {
-
+        $data = [
+            'name'=>'xiaomi',
+        ];
+        $this->categoryModel->store($data);
     }
     public function update()
     {

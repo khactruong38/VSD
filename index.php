@@ -8,6 +8,7 @@
     $controllerObject = new $controllerName;
     $controllerObject->$actionName();
  ?>
+ 
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +25,7 @@
             include './Views/frontend/layout/header.php';
         ?>
         <div  id="content">
+        
         </div>
         
     </div>
