@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'SVN Gotham Regular';
+    src: url(/admin/assets/fonts/SVN-Gotham\ Regular.otf);
+}
+
+body {
+    background-color: #234191;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+}
+
+#logo {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.login-form {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+}
+
+.username {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    color: #fff;
+    font-family: 'SVN Gotham Regular';
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.eye {
+    position: absolute;
+    right: 15px;
+    top: 82%;
+    cursor: pointer;
+    max-width: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.control {
+    position: absolute;
+    top: 220%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'SVN Gotham Regular';
+    color: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.remember input {
+    position: absolute;
+
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #234191;
+    border-radius: 6px;
+    border: 1px solid #fff;
+}
+
+.remember input:checked~.checkmark {
+    background-color: #2196F3;
+    border: none;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.remember input:checked~.checkmark:after {
+    display: block;
+}
+
+.remember .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.forgot-password {
+    font-size: 16px;
+    font-family: 'SVN Gotham Regular';
+    color: #fff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #eee;
+}
+
+.login {
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #F58532;
+    border-radius: 10px;
+    padding: 12px 40px;
+    cursor: pointer;
+}
+
+.login .login-btn {
+    font-size: 16px;
+    font-family: 'SVN Gotham Regular';
+    color: #fff;
+    text-decoration: none;
+}
+
+.login:hover {
+    background-color: #cf6716;
+}

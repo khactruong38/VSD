@@ -64,7 +64,7 @@ body {
         width: 100%;
     }
 }
-#content {
+#table {
     width: 100%;
-    margin-left: 220px;
+    padding: 400px !important;
 }

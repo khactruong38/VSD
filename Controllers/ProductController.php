@@ -22,7 +22,6 @@ class ProductController extends BaseController
         // Các cột bạn muốn hiển thị ở trang index
 
         $columns = [
-            'id' => ['label' => 'ID', 'width' => '100px'],
             'name' => ['label' => 'Name', 'width' => '200px'],
             'price' => ['label' => 'Price', 'width' => '150px'],
             'category_id' => ['label' => 'Category ID', 'width' => '100px']
@@ -30,7 +29,7 @@ class ProductController extends BaseController
         
         
         return $this->view('frontend.products.index',[
-            'pageTitle' => "trang sản phẩm",
+            'pageTitle' => "Trang sản phẩm",
             'columns' => $columns,
             'products'=>$products,
 
@@ -85,7 +84,7 @@ class ProductController extends BaseController
             'price',
             'category_id'];
         return $this->view('frontend.products.edit',[
-            'pageTitle' => "trang sản phẩm",
+            'pageTitle' => "Trang sản phẩm",
             'columns' => $columns,
             'products'=>$products,
 

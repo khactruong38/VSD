@@ -1,8 +1,8 @@
 <?php
     class UserModel extends BaseModel
     {
-        const TABLE = 'user';
-
+        const TABLE = 'users';
+        
         public function getAll($select =['*'],$orderBy = [],$limit =15)
         {
            return $this->all(self::TABLE,$select,$orderBy,$limit);

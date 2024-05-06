@@ -8,34 +8,59 @@
     $controllerObject = new $controllerName;
     $controllerObject->$actionName();
  ?>
- 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Views/FrontEnd/Css/style.css">
+    <title>Kingstudy</title>
+    <link rel="stylesheet" href="./Views/FrontEnd/Css/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </head>
+
 <body>
-    <div class="row container" id="main">
-        <?php
-            include './Views/frontend/layout/header.php';
+
+ <?php
+             include './Views/frontend/layout/header.php';
         ?>
-        <div  id="content">
-        
+
+        <?php
+            // include './Views/frontend/layout/card-wraper.php';
+        ?>
+        <div id="table" class="table-student">
         </div>
-        
-    </div>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9b6f37e4bf.js" crossorigin="anonymous"></script>
 </body>
+
+</html>
 <script>
-    $("header").on("click", "a", function() {
-        var hrf = $(this).attr("href");
-        var lin = hrf.substring(1, hrf.length);
-        $("#content").load(lin);
+    // $("header").on("click", "a", function() {
+    //     var hrf = $(this).attr("href");
+    //     var lin = hrf.substring(1, hrf.length);
+    //     $("#table").load(lin);
+    // });
+</script>
+<script>
+    $(document).ready(function(){
+    $(".load-content").click(function(e){
+        e.preventDefault(); // Prevent default behavior of <a> tag
+
+        var file = $(this).data("file"); // Get the data-file attribute value
+
+        // Load the specified file into the div with id 'table'
+        $("#table").empty().load(file, function(response, status, xhr) {
+            if (status == "error") {
+                console.error('Error:', xhr.status, xhr.statusText);
+            }
+        });
     });
+});
+
+
 </script>
 </html>
 
