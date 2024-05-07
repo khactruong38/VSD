@@ -63,6 +63,7 @@ body {
     color: #fff;
     font-size: 14px;
     text-decoration: none;
+    white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 18px;
@@ -81,6 +82,33 @@ body {
 
 /* Main body */
 
+.screenhide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #C2DEFF;
+    z-index: 1000;
+    text-align: right;
+    justify-content: end;
+    padding-top: 20px;
+    padding-right: 20px;
+    display: none;
+}
+
+.screenhide a {
+    margin: 12px;
+    background-color: grey;
+    padding: 8px 30px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    width: 80px;
+    cursor: pointer;
+}
+
 .main-content {
     position: absolute;
     left: 240px;
@@ -91,10 +119,31 @@ body {
     top: 0;
 }
 
+
+
+.menu-mobile-btn {
+    margin: 6px 20px 0 20px;
+    display: none;
+}
+
+.menu-mobile-btn a {
+    color: black;
+    text-decoration: none;
+}
+
+.menu-mobile-btn a:hover {
+    color: #244291;
+}
+
+.user-info {
+    display: flex;
+}
+
 .header-wrapper {
     display: flex;
     justify-content: space-between;
     background: #fff;
+    width: 100%;
 }
 
 .header-wrapper .header-title {
@@ -107,12 +156,13 @@ body {
 }
 
 .card-wraper {
+    margin-top: 10px;
     display: flex;
-    width: 95%;
+    width: 90%;
 }
 
 .card-container {
-    margin: 12px 6px;
+    margin: 6px 12px;
     padding: 14px;
     width: 25%;
     display: flex;
@@ -122,17 +172,19 @@ body {
 
 }
 
+
 .card-container:first-child {
-    margin: 12px 6px 12px 12px;
+    margin: 6px 12px;
     padding: 14px;
     display: flex;
+    width: 25%;
     justify-content: space-between;
     background-color: #fff;
     border-radius: 8px;
 }
 
 .card-container:last-child {
-    margin: 12px 12px 12px 6px;
+    margin: 6px 12px;
     padding: 14px;
     width: 25%;
     display: flex;
@@ -162,6 +214,7 @@ body {
 
 
 .task-bar {
+    margin-top: 12px;
     padding: 0 12px 0 12px;
     display: flex;
 }
@@ -194,8 +247,16 @@ body {
 
 }
 
+.hideMobile-btn {
+    display: none;
+}
+
 .list-student-title li a:hover {
     color: aqua
+}
+
+.search-bar {
+    display: flex;
 }
 
 .search-bar input[type=text] {
@@ -293,32 +354,43 @@ body {
     margin-right: 20px;
 }
 
-.table-student {
+
+.table-student-1 {
     background-color: #fff;
     margin: 12px;
     border-radius: 8px;
-    padding: 6px 12px;
-    width: 100%;
+    padding: 16px 12px;
+    width: 95%;
 }
 
+tr {
+    padding: 12px 0;
+}
+
+
 table {
-    width: 100%;
     font-size: 12px;
     border-collapse: collapse;
+    width: 1100px;
 }
 
 thead th {
-    position: sticky;
     padding: 14px 0;
     top: 0;
     background-color: #fff;
     color: #234191;
 
 }
+
+td {
+    padding: 10px 0;
+
+}
+
 th,
 td {
-    padding: 10px 8px;
     text-align: left;
+    padding: 12px 8px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -346,17 +418,137 @@ td {
     background-color: #ffc5c5;
     color: #DF0404;
 }
+
 .menu-text.text-light {
     color: white;
 }
+
 a.add-action-btn {
     text-decoration: none;
 }
-table.table-student th:last-child{
+
+table.table-student-1 th:last-child {
     width: 32px;
     padding-right: 16px;
 }
-table.table-student th:nth-last-child(2) {
+
+table.table-student-1 th:nth-last-child(2) {
     width: 80px;
 }
 
+@media (max-width: 1200px) {
+    .task-bar {
+        flex-wrap: wrap;
+    }
+
+    .list-student-nav {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .sidebar {
+        width: 75px;
+    }
+
+
+    .main-content {
+        position: absolute;
+        left: 75px;
+        right: 0;
+        height: 60px;
+        width: 100%-80px;
+        bottom: 0;
+        top: 0;
+    }
+
+
+    .search-bar,
+    .action-bar {
+        flex-basis: 100%;
+        margin-bottom: 8px;
+    }
+
+    .table-student-1 table {
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .task-bar,
+    .card-wraper {
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        display: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .header-title h2 {
+        font-size: 18px;
+    }
+
+    .main-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 60px;
+        width: 100%;
+        bottom: 0;
+        top: 0;
+    }
+
+    .list-student-nav {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+
+    .search-bar,
+    .action-bar {
+        flex-basis: 100%;
+        margin-bottom: 8px;
+    }
+
+    .search-bar input[type='text'] {
+        width: 200px;
+    }
+
+    .card-wraper {
+        width: 100%;
+    }
+
+    .card-container {
+        flex-basis: 100%;
+    }
+
+    .table-student-1 table {
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+
+    .menu-mobile-btn {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2000;
+        width: 240px;
+        height: 100vh;
+        padding: 0 16px;
+        color: #fff;
+        overflow: hidden;
+        background: #234191;
+    }
+
+    .hideMobile-btn {
+        display: block;
+    }
+}

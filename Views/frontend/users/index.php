@@ -1,11 +1,31 @@
 <div class="main-content">
+
+    <div class="screenhide">
+    <li style="list-style: none;"
+     onclick=hideMobileSidebar()>
+        <a href="#">Đóng</a>
+    </li>    
+    
+    </div>
+
         <div class="header-wrapper">
             <div class="header-title">
                 <h2><?php  echo $pageTitle;?></h2>
             </div>
             <div class="user-info">
+                <li style="list-style: none;"
+                    onclick=showMobileSidebar()
+                >
+                    <div class="menu-mobile-btn">
+                        <a href="#">
+                            <i style="font-size: 28px;" class="fa-solid fa-bars"></i>
+                        </a>
+                </div>
+                </li>
+
                 <img src="./Views/frontend/images/avatar.png" alt="" height="40px" width="40px">
             </div>
+            
         </div>
 
 
@@ -98,7 +118,7 @@
 
 
 // Hiển thị bảng sản phẩm
-echo '<table class="table-student" border="1">';
+echo '<table class="table-student-1" border="1">';
 echo '<tr>';
 foreach ($columns as $key => $config) {
     echo '<th style="width: ' . $config['width'] . '">' . $config['label'] . '</th>';

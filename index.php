@@ -62,6 +62,26 @@
 
 
 </script>
+
+
+<script>
+    
+function showMobileSidebar() {
+    const mobileSidebar = document.querySelector('.sidebar')
+    const mobileScreen = document.querySelector('.screenhide')
+    mobileSidebar.style.display = "block";
+    mobileScreen.style.display = "block";
+}
+
+function hideMobileSidebar() {
+    const mobileSidebar = document.querySelector('.sidebar')
+    const mobileScreen = document.querySelector('.screenhide')
+
+    mobileSidebar.style.display = "none";
+    mobileScreen.style.display = "none";
+
+}
+</script>
 </html>
 
 

@@ -13,3 +13,4 @@ eyeClose.addEventListener("click", function () {
     eyeClose.classList.add("hidden");
     input.setAttribute("type", "text");
 })
+
