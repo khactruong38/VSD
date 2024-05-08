@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add product</title>
+    <link rel="stylesheet" href="/Views/frontend/css/addform.css">
+
+    <!--===== Boxicons CSS =====-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Học sinh</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Quản lý học sinh</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-regular fa-address-card"></i>
+                    <span>Học sinh đăng ký</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                    <span>Promote</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-question"></i>
+                    <span>Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <h2>Thêm sản phẩm</h2>
+            </div>
+            <div class="user-info">
+                <img src="/images/avatar.png" alt="" height="40px" width="40px">
+            </div>
+        </div>
+
+        <form class="add-student-form">
+            <div class="form-field">
+                <div class="form-container">
+                    <label for="">Tên</label>
+                    <input type="text" id="" name=""><br>
+                </div>
+
+                <div class="form-container">
+                    <label for="">Giá</label>
+                    <input type="text" id="" name=""><br><br>
+                </div>
+                <div class="form-container">
+                    <label for="">Id</label>
+                    <input type="text" id="" name=""><br><br>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="submit-btn">
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+
+
+
+    <script>
+        const optionMenu = document.querySelector(".select-menu"),
+            selectBtn = optionMenu.querySelector(".select-btn"),
+            options = optionMenu.querySelectorAll(".option"),
+            sBtn_text = optionMenu.querySelector(".sBtn-text");
+        selectBtn.addEventListener("click", () => optionMenu.classList.toggle("genderradioactive"));
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                let selectedOption = option.querySelector(".option-text").innerText;
+                sBtn_text.innerText = selectedOption;
+                optionMenu.classList.remove("genderradioactive");
+            });
+        });
+    </script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9b6f37e4bf.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

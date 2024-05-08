@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #C2DEFF;
+}
+
+.sidebar {
+    position: sticky;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 100vh;
+    padding: 0 16px;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.5s linear;
+    background: #234191;
+}
+
+/* .sidebar:hover {
+    width: 240px;
+} */
+
+
+.logo {
+    margin-top: 30px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover,
+.active {
+    background: #445da1;
+}
+
+.menu a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.menu a span {
+    overflow: hidden;
+
+}
+
+.menu a i {
+    font-size: 1.2rem;
+}
+
+/*main body*/
+.main-content {
+    position: absolute;
+    left: 240px;
+    right: 0;
+    height: 60px;
+    width: 100%-240px;
+    bottom: 0;
+    top: 0;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.header-wrapper .header-title {
+    margin: 0 0 0 12px;
+    line-height: 60px;
+}
+
+.header-wrapper .user-info {
+    margin: 10px 20px;
+}
+
+/* form add student */
+.add-student-form {
+    padding: 12px;
+}
+
+.add-student-form .form-container {
+    flex-basis: 25%;
+    margin: 10px 20px;
+}
+
+.form-field {
+    display: flex;
+}
+
+
+.add-student-form input[type="text"],
+.add-student-form input[type="date"] {
+    height: 40px;
+    width: 100%;
+    padding: 0 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+
+
+/* gender*/
+.select-menu .select-btn {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    padding: 0 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    align-items: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn i {
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-menu.genderradioactive .select-btn i {
+    transform: rotate(-180deg);
+}
+
+.select-menu .options {
+    position: relative;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.select-menu.genderradioactive .options {
+    display: block;
+}
+
+.options .option {
+    display: flex;
+    height: 40px;
+    cursor: pointer;
+    padding: 0 8px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+
+.options .option:hover {
+    background: #F2F2F2;
+}
+
+.option i {
+    font-size: 25px;
+    margin-right: 12px;
+}
+
+.option .option-text {
+    font-size: 18px;
+    color: #333;
+}
+
+.submit-btn {
+    margin: 10px 32px;
+
+}
+
+.submit-btn input[type="submit"] {
+    background-color: #445da1;
+    color: white;
+    padding: 0 40px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 75px;
+    }
+
+
+    .main-content {
+        position: absolute;
+        left: 75px;
+        right: 0;
+        height: 60px;
+        width: 100%-80px;
+        bottom: 0;
+        top: 0;
+    }
+}
+
+@media (max-width: 680px) {
+    .form-field {
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        width: 75px;
+        position: fixed;
+
+    }
+
+    .header-title h2 {
+        font-size: 18px;
+    }
+
+    .main-content {
+        position: absolute;
+        left: 75px;
+        right: 0;
+        height: 60px;
+        width: 100%-80px;
+        bottom: 0;
+        top: 0;
+    }
+
+    .add-student-form .form-container {
+        flex-basis: 100%;
+        margin: 0px 8px;
+    }
+
+    .add-student-form .form-container:first-child {
+        margin-bottom: 20px;
+    }
+}

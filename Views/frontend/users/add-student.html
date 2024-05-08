@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add student</title>
+    <link rel="stylesheet" href="/Views/frontend/css/addform.css">
+    <!--===== Boxicons CSS =====-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Học sinh</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Quản lý học sinh</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-regular fa-address-card"></i>
+                    <span>Học sinh đăng ký</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                    <span>Promote</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-question"></i>
+                    <span>Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <h2>Thêm học sinh</h2>
+            </div>
+            <div class="user-info">
+                <img src="/images/avatar.png" alt="" height="40px" width="40px">
+            </div>
+        </div>
+
+        <form class="add-student-form">
+            <div class="form-field">
+                <div class="form-container">
+                    <label for="">Họ tên</label>
+                    <input type="text" id="" name="" placeholder="Nhập họ tên"><br>
+                </div>
+
+                <div class="form-container">
+                    <label for="">Email</label>
+                    <input type="text" id="" name="" placeholder="Nhập email"><br><br>
+                </div>
+                <div class="form-container">
+                    <label for="">Số điện thoại</label>
+                    <input type="text" id="" name="" placeholder="Nhập số điện thoại"><br><br>
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="form-container">
+                    <label for="">Ngày sinh</label>
+                    <input type="date" id="" name="" placeholder="Chọn ngày sinh"><br>
+                </div>
+
+                <div class="form-container">
+                    <label for="">Địa chỉ</label>
+                    <input type="text" id="" name="" placeholder="Nhập địa chỉ"><br><br>
+                </div>
+
+                <div class="form-container">
+                    <div class="select-menu">
+                        <label for="">Giới tính</label>
+
+                        <div class="select-btn">
+                            <span class="sBtn-text">Chọn giới tính</span>
+                            <i class="bx bx-chevron-down"></i>
+                        </div>
+                        <ul class="options">
+                            <li class="option">
+                                <i class='bx bx-male-sign' style="color: #1DA1F2;"></i>
+                                <span class="option-text">Nam</span>
+                            </li>
+
+                            <li class="option">
+                                <i class="bx bx-female-sign" style="color: #E1306C;"></i>
+                                <span class="option-text">Nữ</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <div class="form-container">
+                    <label for="">Vai trò</label>
+                    <input type="text" id="" name="" placeholder="Vai trò"><br>
+                </div>
+
+            </div>
+        </form>
+
+        <div class="submit-btn">
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+
+
+
+    <script>
+        const optionMenu = document.querySelector(".select-menu"),
+            selectBtn = optionMenu.querySelector(".select-btn"),
+            options = optionMenu.querySelectorAll(".option"),
+            sBtn_text = optionMenu.querySelector(".sBtn-text");
+        selectBtn.addEventListener("click", () => optionMenu.classList.toggle("genderradioactive"));
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                let selectedOption = option.querySelector(".option-text").innerText;
+                sBtn_text.innerText = selectedOption;
+                optionMenu.classList.remove("genderradioactive");
+            });
+        });
+    </script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/9b6f37e4bf.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
