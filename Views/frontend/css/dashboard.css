@@ -109,7 +109,8 @@ body {
     cursor: pointer;
 }
 
-.main-content {
+.main-content,
+.main-form {
     position: absolute;
     left: 240px;
     right: 0;
@@ -550,5 +551,172 @@ table.table-student-1 th:nth-last-child(2) {
 
     .hideMobile-btn {
         display: block;
+    }
+}
+
+
+
+
+
+/* form add student */
+.add-student-form {
+    padding: 12px;
+}
+
+.add-student-form .form-container {
+    flex-basis: 25%;
+    margin: 10px 20px;
+}
+
+.form-field {
+    display: flex;
+}
+
+
+.add-student-form input[type="text"],
+.add-student-form input[type="date"] {
+    height: 40px;
+    padding: 0 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+
+
+/* gender*/
+.select-menu .select-btn {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    padding: 0 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    align-items: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn i {
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-menu.genderradioactive .select-btn i {
+    transform: rotate(-180deg);
+}
+
+.select-menu .options {
+    position: relative;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.select-menu.genderradioactive .options {
+    display: block;
+}
+
+.options .option {
+    display: flex;
+    height: 40px;
+    cursor: pointer;
+    padding: 0 8px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+
+.options .option:hover {
+    background: #F2F2F2;
+}
+
+.option i {
+    font-size: 25px;
+    margin-right: 12px;
+}
+
+.option .option-text {
+    font-size: 18px;
+    color: #333;
+}
+
+.submit-btn {
+    margin: 10px 20px;
+
+}
+
+.submit-btn input[type="submit"] {
+    background-color: #445da1;
+    color: white;
+    padding: 0 40px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 75px;
+    }
+
+
+    .main-content {
+        position: absolute;
+        left: 75px;
+        right: 0;
+        height: 60px;
+        width: 100%-80px;
+        bottom: 0;
+        top: 0;
+    }
+
+    .add-student-form .form-container {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 680px) {
+    .form-field {
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        width: 75px;
+        position: fixed;
+
+    }
+
+    .header-title h2 {
+        font-size: 18px;
+    }
+
+    .main-form {
+        position: absolute;
+        left: 75px;
+        right: 0;
+        height: 60px;
+        width: 100%-80px;
+        bottom: 0;
+        top: 0;
+    }
+
+    .add-student-form .form-container {
+        flex-basis: 100%;
+        margin: 0px 8px;
+    }
+
+    .add-student-form .form-container:first-child {
+        margin-bottom: 20px;
     }
 }

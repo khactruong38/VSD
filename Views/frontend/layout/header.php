@@ -13,7 +13,7 @@
             <li>
     <a href="javascript:void(0)" class="load-content" data-file="?controller=product&action=index">
         <i class="fa-solid fa-graduation-cap"></i>
-        <span>Học sinh</span>
+        <span>Sản phẩm</span>
     </a>
 </li>
 
